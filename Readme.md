@@ -6,8 +6,23 @@ tree_path_delimiter	: delimiter of the path
 ```
 
 #Usage
+
+* Create a model class 
+* Add this code to your model:
 ```
-1. Implement ITreeModel
-2. Use TreeModelTrait
-3. Observe TreeModelObserver
+use \ThunderID\EloquentTreeModel\ITreeModel;
+use \ThunderID\EloquentTreeModel\TreeModelTrait;
+use \ThunderID\EloquentTreeModel\TreeModelObserver;
+```
+* Update your model to implements ITreeModel
+```
+class MyModel extends Model implements ITreeModel 
+```
+* Use TreeModel trait in your model
+```
+use TreeModelTrait;
+```
+* Assign observer to your model
+```
+static::observe(new TreeModelObserver);
 ```
